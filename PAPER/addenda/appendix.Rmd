@@ -1,0 +1,16 @@
+---
+output:
+  pdf_document:
+    fig_caption: yes
+    template: ../templates/aog-latex-ms.tex
+fontfamily: mathpazo
+fontsize: 11pt
+anonymous: false
+endnotes: false
+appendix: true
+appendixletter: A
+#change page number for the final pdf
+pagenumber: 1
+---
+
+#Technical Appendix
