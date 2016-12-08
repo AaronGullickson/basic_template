@@ -33,6 +33,7 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{article}
 \usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{float}
 
 \newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
 $if(fontfamily)$
@@ -192,6 +193,11 @@ $endif$
 
 \newlength{\normalparindent}
 \setlength{\normalparindent}{\parindent}
+
+%prettier captions for figures and tables
+%I am making the text of figure captions smaller but not table captions
+\usepackage[labelfont=bf,labelsep=period]{caption}
+\captionsetup[figure]{font=footnotesize}
 
 \begin{document}
 	
