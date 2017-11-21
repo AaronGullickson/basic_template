@@ -4,6 +4,8 @@ output:
     citation_package: natbib
     fig_caption: yes
     template: ./templates/aog-latex-ms.tex
+  word_document:
+    reference_docx: ./templates/aog_word_style.docx
 fontfamily: mathpazo
 fontsize: 11pt
 anonymous: false
