@@ -1,0 +1,3 @@
+# Addenda directory
+
+This directory contains starter code for two R Markdown files to produce tables and figures and appendixes as separate PDF files. These PDF files can then be combined with the main manuscript using the `combine_pdfs.py` python script in the `PAPER` directory. For the final combined PDF, it is useful to manually change the `pagenumber` option in these Rmd files so that the starting pagination is accurate in the final PDF document. 
