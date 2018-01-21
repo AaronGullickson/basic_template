@@ -3,16 +3,16 @@ output:
   pdf_document:
     citation_package: natbib
     fig_caption: yes
-    template: ./templates/aog-latex-ms.tex
+    template: ./resources/aog-latex-ms.tex
   word_document:
-    reference_docx: ./templates/aog_word_style.docx
+    reference_docx: ./resources/aog_word_style.docx
 fontfamily: mathpazo
 fontsize: 11pt
 anonymous: false
 endnotes: false
 pagenumber: 1
 bibliography: ./project.bib
-biblio-style: ./templates/ajs.bst
+biblio-style: ./resources/ajs.bst
 title: "The Title"
 author:
 - affiliation: University of Oregon, Sociology
