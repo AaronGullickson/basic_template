@@ -8,7 +8,8 @@
 # template. As new scripts are added to a more complicated actual analysis, this
 # script should be updated to reflect those changes.
 
-# Remove all logs, output, and html reports
+# Remove all logs, output, and html reports. Keep in mind that this will also remove README files
+# in output and logs directory. 
 rm output/*
 rm logs/*
 rm *.html
