@@ -1,6 +1,5 @@
 ---
 title: "Analysis for Project"
-author: "Aaron Gullickson"
 output: 
   html_document: 
     fig_height: 6

@@ -1,5 +1,7 @@
-## organize_data.R
-##
+#' ---
+#' title: "organize_data.R"
+#' author: ""
+#' ---
 
 # This script will read in raw data from the input directory, clean it up to produce 
 # the analytical dataset, and then write the analytical data to the output directory. 

@@ -1,5 +1,4 @@
 ## check_packages.R
-## Aaron Gullickson
 
 #Run this script to check for packages that the other R scripts will use. If missing, try to install.
 #code borrowed from here:
