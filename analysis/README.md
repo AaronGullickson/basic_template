@@ -1,4 +1,4 @@
-# ANALYSIS Directory
+# analysis directory
 
 This is the main directory for the analysis. All of the scripts necessary to run the analysis are placed directly into this directory. All datasets should be placed in the `input` or `output` folder. 
 
