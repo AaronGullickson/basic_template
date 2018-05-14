@@ -17,7 +17,7 @@
 import sys
 from PyPDF2 import PdfFileMerger
 
-pdfs = ['main.pdf', 'addenda/tablesfigs.pdf', 'addenda/appendix.pdf']
+pdfs = ['main.pdf', 'tablesfigs.pdf', 'appendix.pdf']
 
 merger = PdfFileMerger()
 

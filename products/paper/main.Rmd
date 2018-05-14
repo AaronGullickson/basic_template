@@ -11,7 +11,7 @@ fontsize: 11pt
 anonymous: false
 endnotes: false
 pagenumber: 1
-bibliography: ./project.bib
+bibliography: ../project.bib
 biblio-style: ./resources/ajs.bst
 title: "The Title"
 author:
