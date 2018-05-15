@@ -1,0 +1,21 @@
+.footer {
+    color: grey; font-size: 10px;
+    position: relative; top: 510px; left: 0px;
+    text-align:left;
+}
+
+div.stargazer 
+{
+    text-align: center;
+}
+
+div.stargazer table 
+{
+    margin: 20px auto; 
+    text-align: left;
+}
+
+div.stargazer td
+{
+  padding-left: 20px;
+}
