@@ -5,13 +5,10 @@ output:
     template: ./resources/aog-latex-ms.tex
 fontfamily: mathpazo
 fontsize: 11pt
-anonymous: false
-endnotes: false
-#Change the page number for the final pdf
-pagenumber: 1
 ---
 
 ```{r preamble, echo=FALSE, warning=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 #load libraries, data, whatever
 ```
 

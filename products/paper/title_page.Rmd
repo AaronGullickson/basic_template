@@ -6,26 +6,11 @@ output:
     fig_caption: yes
     template: ./resources/aog-latex-ms.tex
   word_document:
-    pandoc_args: './paper_info.yaml'
     reference_docx: ./resources/aog_word_style.docx
+    pandoc_args: './paper_info.yaml'
   html_document:
     pandoc_args: './paper_info.yaml'
-fontfamily: mathpazo
-fontsize: 11pt
-anonymous: false
-endnotes: false
-bibliography: ../project.bib
-biblio-style: ./resources/ajs.bst
+fontfamily: times
+fontsize: 12pt
 ---
 
-# Introduction
-
-# Background
-
-# Data and Methods
-
-# Results
-
-# Conclusions
-
-# References
