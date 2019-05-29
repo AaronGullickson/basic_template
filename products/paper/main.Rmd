@@ -25,10 +25,10 @@ abstract: This is a test abstract
 ---
 
 # Introduction
-
-# Background
+This research is designed to answer the question "Is geographic location within the United States associated with disbelief in climate change?". This project compliments past research that has attempted to identify particualr demographic charicteristics that are associated with disbelief in climate change and investigates the role that one's location may play in influcing personal beliefs regarding climate change. Previous research has found that white conservative men are more likley to deny the occurrence of climate chagne (McCright and Dunlap 2011) while other projects have found regional differences between perceptions of the risks posed by cliamte change (that sociologist from LSU 2009). This research adds to previous works by interrogating the regional attitudes of residents in the United States toward climate change and offers the first comprehensive comparison of geographic regions within the country. 
 
 # Data and Methods
+Data were collected across nine years (2008-2017), also referred to as waves, through the use of self-administered web-based surveys by the Yale Program on Climate Change Communication. Surveys were administered on a yearly basis in 2008, while surverys were administed on a twice-yearly basis from 2010 to 2017. The dataset contains a total of 20,024 responses (N = 24,024). The codebook notes that "Prospective members were recruited using a combination of random digit dial and address-based sampling techniques that cover virtually all (noninstitutional) resident phone numbers and addresses in the United States."
 
 # Results
 

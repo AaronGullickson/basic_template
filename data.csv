@@ -1,0 +1,60 @@
+YCOM VARIABLE NAME,VARIABLE DESCRIPTION
+GeoType,Geographic abbreviation
+GeoName,Geographic name
+TotalPop,Total population
+happening,Estimated percentage who think that global warming is happening
+happeningOppose,Estimated percentage who do not think that global warming is happening
+human,Estimated percentage who think that global warming is caused mostly by human activities
+humanOppose,Estimated percentage who think that global warming is caused mostly by natural changes in the environment
+consensus,Estimated percentage who believe that most scientists think global warming is happening
+consensusOppose,Estimated percentage who believe there is a lot of disagreement among scientists about whether or not global warming is happening
+affectweather,Estimated percentage who somewhat/strongly agree that global warming is affecting the weather in the United States
+affectweatherOppose,Estimated percentage who somewhat/strongly disagree that global warming is affecting the weather in the United States
+worried,Estimated percentage who are somewhat/very worried about global warming
+worriedOppose,Estimated percentage who are not very/not at all worried about global warming
+harmplants,Estimated percentage who think global warming will harm plants and animal species a moderate amount/a great deal
+harmplantsOppose,Estimated percentage who think global warming will harm plants and animal species not at all/only a little
+futuregen,Estimated percentage who think global warming will harm future generations a moderate amount/a great deal
+futuregenOppose,Estimated percentage who think global warming will harm future generations not at all/only a little
+devharm,Estimated percentage who think global warming will harm people in developing countries a moderate amount/a great deal
+devharmOppose,Estimated percentage who think global warming will harm people in developing countries not at all/only a little
+harmUS,Estimated percentage who think global warming will harm people in the US a moderate amount/a great deal
+harmUSOppose,Estimated percentage who think global warming will harm people in the US not at all/only a little
+personal,Estimated percentage who think global warming will harm them personally a moderate amount/a great deal
+personalOppose,Estimated percentage who think global warming will harm them personally not at all/only a little
+timing,Estimated percentage who think global warming will start to harm people in the United now/within 10 years
+timingOppose,"Estimated percentage who think global warming will start to harm people in the United in 25 years or longer, or never"
+fundrenewables,Estimated percentage who somewhat/strongly support funding research into renewable energy sources
+fundrenewablesOppose,Estimated percentage who somewhat/strongly oppose funding research into renewable energy sources
+regulate,Estimated percentage who somewhat/strongly support regulating CO2 as a pollutant
+regulateOppose,Estimated percentage who somewhat/strongly oppose regulating CO2 as a pollutant
+CO2limits,Estimated percentage who somewhat/strongly support setting strict limits on existing coal-fire power plants
+CO2limitsOppose,Estimated percentage who somewhat/strongly oppose setting strict limits on existing coal-fire power plants
+reducetax,Estimated percentage who somewhat/strongly support requiring fossil fuel companies to pay a carbon tax and use the money to reduce other taxes (such as income tax) by an equal amount
+reducetaxOppose,Estimated percentage who somewhat/strongly oppose requiring fossil fuel companies to pay a carbon tax and use the money to reduce other taxes (such as income tax) by an equal amount
+supportRPS,Estimated percentage who somewhat/strongly support requiring utilities to produce 20% electricity from renewable sources
+supportRPSOppose,Estimated percentage who somewhat/strongly oppose requiring utilities to produce 20% electricity from renewable sources
+rebates,Estimated percentage who somewhat/strongly support providing tax rebates for people who purchase energy-efficient vehicles or solar panels
+rebatesOppose,Estimated percentage who somewhat/strongly oppose providing tax rebates for people who purchase energy-efficient vehicles or solar panels
+drillANWR,Estimated percentage who somewhat/strongly support drilling for oil in the Arctic National Wildlife Refuge
+drillANWROppose,Estimated percentage who somewhat/strongly oppose drilling for oil in the Arctic National Wildlife Refuge
+drilloffshore,Estimated percentage who somewhat/strongly support expanding offshore drilling for oil and natural gas off the U.S. coast
+drilloffshoreOppose,Estimated percentage who somewhat/strongly oppose expanding offshore drilling for oil and natural gas off the U.S. coast
+teachGW,"Estimated percentage who somewhat/strongly agree that schools should teach about the causes, consequences, and potential solutions to global warming"
+teachGWOppose,"Estimated percentage who somewhat/strongly disagree that schools should teach about the causes, consequences, and potential solutions to global warming"
+corporations,Estimated percentage who think corporations and industy should be doing more/much more to address global warming
+corporationsOppose,Estimated percentage who think corporations and industy should be doing less/much less to address global warming
+citizens,Estimated percentage who think citizens themselves should be doing more/much more to address global warming
+citizensOppose,Estimated percentage who think citizens themselves should be doing less/much less to address global warming
+congress,Estimated percentage who think congress should be doing more/much more to address global warming
+congressOppose,Estimated percentage who think congress should be doing less/much less to address global warming
+governor,Estimated percentage who think their governor should be doing more/much more to address global warming
+governorOppose,Estimated percentage who think their governor should be doing less/much less to address global warming
+localofficials,Estimated percentage who think their local officials should be doing more/much more to address global warming
+localofficialsOppose,Estimated percentage who think their local officials should be doing less/much less to address global warming
+prienv,"Estimated percentage who think protecting the environment is more important than economic growth, even if it reduces economic growth"
+prienvOppose,"Estimated percentage who think economic growth is more important than protecting the environment, even if it leads to environmental problems"
+discuss,Estimated percentage who discuss global warming occassionally or often with friends and family
+discussOppose,Estimated percentage who discuss global warming rarely or never with friends and family
+mediaweekly,Estimated percentage who hear about global warming in the media at least weekly
+mediaweeklyOppose,Estimated percentage who hear about global warming in the media several times a year or less often
