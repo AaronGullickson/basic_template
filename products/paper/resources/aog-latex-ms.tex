@@ -115,7 +115,7 @@ $if(graphics)$
 $endif$
 
 $if(title)$
-\title{$title$$if(subtitle)$: $subtitle$$endif$ $if(anonymous)$$else$$if(thanks)$\thanks{$thanks$} $endif$$endif$ }
+\title{$title$$if(subtitle)$: $subtitle$$endif$ $if(thanks)$\thanks{$thanks$} $endif$ }
 $endif$
 
 
@@ -136,7 +136,7 @@ $endif$
 
 $if(natbib)$
 \usepackage{natbib}
-\setcitestyle{aysep={}} 
+\setcitestyle{aysep={}}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
 $endif$
 
