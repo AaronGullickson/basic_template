@@ -7,9 +7,10 @@ fontfamily: mathpazo
 fontsize: 11pt
 ---
 
-```{r preamble, echo=FALSE, warning=FALSE}
-knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-#load libraries, data, whatever
+```{r setup, echo=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE, warning = FALSE)
+#load data
+#load libraries
 ```
 
 # Tables and Figures
