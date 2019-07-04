@@ -18,6 +18,16 @@ bibliography: ../project.bib
 biblio-style: ./resources/ajs.bst
 ---
 
+```{r setup, echo=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+# If you want to do things in one R Markdown document then use the 
+# chunk option eval to toggle between running with and without 
+# compiling R code chunks
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE, warning = FALSE, 
+                      eval = TRUE)
+#load data
+#load libraries
+```
+
 # Introduction
 
 # Background
