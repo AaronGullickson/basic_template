@@ -19,7 +19,9 @@ slides > slide:not(.nobackground):after {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-library(stargazer)
+library(dplyr)
+library(knitr)
+library(texreg)
 library(ggplot2)
 ```
 
@@ -71,8 +73,8 @@ This is my *note*.
 </div>
 
 ```{r}
-knitr::kable(round(100*prop.table(apply(Titanic, c(3,4), sum),1),1),
-             caption="Survival on the Titanic")
+tab <- round(100*prop.table(apply(Titanic, c(3,4), sum),1),1)
+kable(tab, caption="Survival on the Titanic")
 ```
 
 ## Slide with Plot
@@ -106,41 +108,16 @@ ggplot(pressure, aes(x=temperature, y=pressure))+
   theme(plot.background = element_rect(fill = "transparent",colour = NA))
 ```
 
-## Slide with a regression model using stargazer
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
-
-<!-- Had to override the default notes, because the stars create problems
-     in markdown-->
-
-<div class="stargazer">
-```{r echo=FALSE, results="asis", warning=FALSE, message=FALSE}
-model1 <- lm(Fertility~Agriculture, data=swiss)
-model2 <- update(model1, .~.+Education)
-model3 <- update(model2, .~.+Catholic)
-stargazer(model1, model2, model3, 
-          star.cutoffs = c(0.05, 0.01, 0.001),
-          type="html", keep.stat = c("rsq","n"),
-          covariate.labels = c("Percent in agriculture",
-                               "Percent with primary education",
-                               "Percent Catholic"),
-          notes = "<em>&#42;p&lt;0.05;&#42;&#42;p&lt;0.01;&#42;&#42;&#42;p&lt;0.001</em>", 
-          notes.append = F,
-          dep.var.labels.include = FALSE, 
-          dep.var.caption = "",
-          title="OLS regression models predicting fertility index in Swiss cantons")
-```
-</div>
-
 ## Slide with a regression model using texreg
 <div class="footer">
 <body>Aaron Gullickson, My Presentation</body>
 </div>
 
-<div class="stargazer">
+<div class="texreg">
 ```{r echo=FALSE, results="asis", warning=FALSE, message=FALSE}
-library(texreg)
+model1 <- lm(Fertility~Agriculture, data=swiss)
+model2 <- update(model1, .~.+Education)
+model3 <- update(model2, .~.+Catholic)
 htmlreg(list(model1, model2, model3),
         custom.coef.names=c("Intercept",
                             "Percent in agriculture",
@@ -149,8 +126,11 @@ htmlreg(list(model1, model2, model3),
         custom.gof.names = c("R-squared","N"),
         caption="OLS regression models predicting fertility index in Swiss cantons",
         caption.above=TRUE,
+        digits=2,
         star.symbol='&#42;',
-        include.adjrs=FALSE, include.rmse=FALSE)
+        custom.note = "%stars. Standard errors in parenthesis.",
+        include.adjrs=FALSE, include.rmse=FALSE,
+        doctype = FALSE)
 ```
 </div>
 
