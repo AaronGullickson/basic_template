@@ -1,3 +1,11 @@
+.title-slide {
+  /*
+  * uncomment to add a background image to the title page
+  background-image: url('images/mikael-kristenson-3aVlWP-7bg8-unsplash.jpg');
+  background-size: cover 
+  */
+}
+
 .footer {
     color: grey; font-size: 10px;
     position: absolute; bottom: 16px; left: 60px;
