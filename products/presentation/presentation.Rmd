@@ -7,7 +7,7 @@ date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    css: [default, metropolis, metropolis-fonts, presentation_template.css]
+    css: [xaringan-themer.css, presentation_template.css]
     self_contained: false
     nature:
       highlightStyle: github
@@ -27,12 +27,27 @@ library(ggplot2)
 library(kableExtra)
 ```
 
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_mono_light(base_color="#23395b",
+                 white_color="#EAEBEE",
+  header_font_google = google_font("Yanone Kaffeesatz", "400"),
+  text_font_google   = google_font("Open Sans", "400", "400i"),
+  code_font_google   = google_font("Fira Mono")
+)
+```
+
 ```{r custom-ggtheme, include=FALSE}
-theme_myslides <- theme_bw()+
-  theme(axis.title = element_text(size=16),
+theme_myslides <- theme_xaringan(background_color = "#EAEBEE")+
+  theme(axis.title = element_text(size=20),
         axis.text = element_text(size=12),
-        plot.title = element_text(size=24),
-        plot.subtitle = element_text(size=16))
+        plot.title = element_text(size=24, hjust=0),
+        plot.title.position = "panel",
+        plot.subtitle = element_text(size=16, hjust=0),
+        plot.caption = element_text(size=14, hjust=1, vjust=1),
+        plot.caption.position = "panel",
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), panel.border = element_rect(fill=NA))
 theme_set(theme_myslides)
 ```
 
@@ -91,10 +106,10 @@ $$\hat{y}_i=\beta_0+\beta_1x_i$$
 
 ```{r}
 ggplot(mpg, aes(displ, hwy, colour = class)) + 
-  geom_point()
+  geom_point()+
+  labs(title="A scatterplot", subtitle = "A subtitle", caption="A caption")+
+  scale_xaringan_color_discrete()
 ```
-
----
 
 ---
 
