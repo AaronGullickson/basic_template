@@ -1,120 +1,122 @@
 ---
 title: "My Presentation"
-subtitle: "A subtitle"
-author: 
-  - Aaron Gullickson, University of Oregon
+subtitle: "A Subtitle"
+author: "Aaron Gullickson"
+institute: "University of Oregon"
+date: "`r Sys.Date()`"
 output:
-  ioslides_presentation:
-    css: presentation_template.css
-    widescreen: yes
-    incremental: true
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [default, metropolis, metropolis-fonts, presentation_template.css]
+    self_contained: false
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      slideNumberFormat: ""
+      ratio: 16:10
 ---
 
-<!-- Get rid of page numbering in footer-->
-<style type="text/css">
-slides > slide:not(.nobackground):after {
-  content: '';
-}
-</style>
-
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(fig.retina = 3, message=FALSE, warning=FALSE, echo=FALSE,
+                      fig.width=13, fig.height=6.5, fig.align="center")
 library(dplyr)
 library(knitr)
 library(texreg)
 library(ggplot2)
+library(kableExtra)
 ```
 
-## Basic Slide | Is this a good subtitle?
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
-
-This is an example of a basic slide with just text and bullet points on it. Note the custom footer that can be applied. 
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Smaller Slide {.smaller}
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
-
-Now I have applied the smaller attribute to the basic slide. 
-
-This is an example of a basic slide with just text and bullet points on it. Note the custom footer that can be applied. 
-
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-## Slide with R Output
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
-
-```{r cars, echo = TRUE}
-summary(cars)
+```{r custom-ggtheme, include=FALSE}
+theme_myslides <- theme_bw()+
+  theme(axis.title = element_text(size=16),
+        axis.text = element_text(size=12),
+        plot.title = element_text(size=24),
+        plot.subtitle = element_text(size=16))
+theme_set(theme_myslides)
 ```
 
-<div class="notes">
-This is my *note*.
+class: inverse, center, middle
 
-- It can contain markdown
-- like this list
+background-image: url(images/mikael-kristenson-3aVlWP-7bg8-unsplash.jpg)
+background-size: cover
 
-</div>
+# An Inverse Cover Slide
+
+---
+
+## Basic Bullet Points
+
+This is an example of a basic slide with just text and bullet points on it. The `--` makes the bullet points appear one by one. 
+
+--
+
+- Bullet 1
+
+--
+
+- Bullet 2
+
+--
+
+- Bullet 3
+
+---
+
+## Split a Slide
+
+You can use `.pull-left[]` and `.pull-right[]` to split slide in two.
+
+--
+
+.pull-left[
+### A Point
+- Unfortunately, you cannot make
+- bullet points appear sequentially within
+- sub-frames
+]
+
+--
+
+.pull-right[
+LaTex style equations work well:
+
+$$\hat{y}_i=\beta_0+\beta_1x_i$$
+]
 
 
-## Slide with table 
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
+---
+
+## A Neat Figure
 
 ```{r}
-tab <- round(100*prop.table(apply(Titanic, c(3,4), sum),1),1)
-kable(tab, caption="Survival on the Titanic")
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
 ```
 
-## Slide with Plot
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
+---
 
-<!-- When making a plot, you can change the width and height to size it as appropriate but be sure to also change the out.width and out.height by a factor of 100 x the heigh and width to maintain proper resolution-->
+---
 
+## Half-sized figure
 
-```{r echo=FALSE, fig.width=7, fig.height=5, out.width='700px', out.height='500px', dpi=300, fig.align='center', dev.args = list(bg = 'transparent')}
-# I find it useful to reduce the top and right margins of the base plot in order to use more real estate
-# since title will be in the slide title
-par(mar=c(5,4,0.5,0.5))
-plot(pressure)
+.pull-left[
+```{r, fig.width=6.5}
+ggplot(mpg, aes(displ, hwy, colour = class)) + 
+  geom_point()
 ```
+]
 
-## Slide with ggplot
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
+.pull-right[
+To make a figure take up half slide, set `fig.width` to 6.5 and  use `pull-left` and `pull-right` to add comments or other details on the other side (or put two figures side by side).
+]
 
-<!-- For ggplot, you need to specify a transparent backgroun in the theme options as well-->
-
-
-```{r echo=FALSE, fig.width=7, fig.height=5, out.width='700px', out.height='500px', dpi=300, fig.align='center', dev.args = list(bg = 'transparent'), warning=FALSE, message=FALSE}
-ggplot(pressure, aes(x=temperature, y=pressure))+
-  geom_smooth()+
-  geom_point()+
-  theme_bw()+
-  theme(plot.background = element_rect(fill = "transparent",colour = NA))
-```
+---
 
 ## Slide with a regression model using texreg
-<div class="footer">
-<body>Aaron Gullickson, My Presentation</body>
-</div>
 
-<div class="texreg">
-```{r echo=FALSE, results="asis", warning=FALSE, message=FALSE}
+.knitreg[
+```{r results="asis"}
 model1 <- lm(Fertility~Agriculture, data=swiss)
 model2 <- update(model1, .~.+Education)
 model3 <- update(model2, .~.+Catholic)
@@ -132,11 +134,14 @@ htmlreg(list(model1, model2, model3),
         include.adjrs=FALSE, include.rmse=FALSE,
         doctype = FALSE)
 ```
-</div>
+]
 
----- 
-<div class="footer" style="top:575px;"> 
-<body>Aaron Gullickson, My Presentation</body>
-</div>
+---
 
-This is a slide with no title. Sometimes useful if you want to take up the whole space with a graph. Note that you have to make a slight change to the footer in order for it to show up properly. 
+## Slide with table using kable and kableExtra
+
+```{r, results='asis'}
+dt <- mtcars[1:5, 1:6]
+kable(dt, caption="Car info") %>% 
+  kable_material()
+```
