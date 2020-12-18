@@ -1,0 +1,149 @@
+---
+title: A Better Reproducible Poster Title
+author:
+  - name: Aaron Gullickson
+    affil: 1
+    twitter: AaronGullickson
+    email: aarong@uoregon.edu
+    orcid: 0000-0001-7237-8131
+    main: true
+affiliation:
+  - num: 1
+    address: Department of Sociology, University of Oregon
+main_findings:
+  - 'The Big Result'
+  - '![](big_splash.svg)'
+logoright_name: '![](https://raw.githubusercontent.com/brentthorne/posterdown/master/images/qr-code-black.png){.main-img-right}'
+main_picwidth: 90%
+main_textsize: "150px"
+font_family: "Raleway"
+main_fontfamily: "Indie Flower"
+primary_colour: "#23395b"
+secondary_colour: "#23395b"
+accent_colour: "#EAEBEE"
+output: 
+  posterdown::posterdown_betterland:
+    self_contained: false
+    pandoc_args: --mathjax
+    highlight: haddock
+    number_sections: false
+link-citations: true
+bibliography: ../project.bib
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(results = 'asis',
+                      echo = FALSE,
+                      warning = FALSE,
+                      tidy = FALSE,
+                      message = FALSE,
+                      fig.align = 'center',
+                      out.width = "100%")
+options(knitr.table.format = "html")
+library(ggplot2)
+library(showtext)
+font_add_google("Raleway")
+font_add_google("Indie Flower")
+showtext_auto()
+```
+
+```{r bigsplash, include=FALSE}
+#create the splash image figure here
+svg('big_splash.svg', height=17, width=20, pointsize=12)
+ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, color=Species))+
+  geom_point(size=5)+
+  labs(title="A Cool Title")+
+  theme_bw()+
+  theme(text = element_text(colour="#EAEBEE", family="Raleway"),
+        axis.line = element_line(colour="#EAEBEE", size = 2),
+        axis.ticks = element_line(colour="#EAEBEE", size = 1),
+        axis.title = element_text(size=40),
+        axis.text = element_text(size=30, colour="#EAEBEE"),
+        plot.title = element_text(size=60, hjust=0),
+        plot.title.position = "panel",
+        plot.subtitle = element_text(size=40, hjust=0),
+        plot.caption = element_text(size=30, hjust=1, vjust=1),
+        plot.caption.position = "panel",
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        legend.title = element_text(size=40),
+        legend.text = element_text(size=30),
+        panel.border = element_rect(fill=NA, colour=NA),
+        panel.background = element_rect(fill = "#23395b",colour = NA),
+        plot.background = element_rect(fill = "#23395b",colour = NA),
+        legend.background = element_rect(fill = "#23395b",colour = NA),
+        legend.key = element_rect(fill = "#23395b",colour = NA))
+dev.off()
+```
+
+# Introduction
+
+This is the `posterdown_betterland` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+
+```{r, include=FALSE}
+knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
+```
+
+## Objectives
+
+1. Pick a template layout.
+2. Write/ create your poster content distraction free.
+3. Let posterdown do its thing!
+
+# Methods
+
+I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+
+$$
+E = mc^2
+$$
+
+To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+
+To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+
+**_Now on to the results!_**
+
+<br>
+<br>
+<br>
+
+# Results
+
+Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+
+```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
+par(mar=c(2,2,0,1))
+plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
+     col = iris$Species, pch = 19, xlab = "Sepal Length",
+     ylab = "Sepal Width")
+```
+
+Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+
+```{r myprettycode, echo=FALSE,collapse=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=3.5, out.width="80%"}
+#trim whitespace
+par(mar=c(2,2,0,0))
+#plot boxplots
+boxplot(iris$Sepal.Width~iris$Species,
+        col = "#008080", 
+        border = "#0b4545",
+        ylab = "Sepal Width (cm)",
+        xlab = "Species")
+```
+
+How about a neat table of data? See, Table \@ref(tab:iristable):
+
+```{r, iristable}
+knitr::kable(
+  iris[1:8,1:5], format = "html",
+  caption = "A table made with the **knitr::kable** function.",
+  align = "c", col.names = c("Sepal <br> Length",
+                             "Sepal <br> Width",
+                             "Petal <br> Length",
+                             "Petal <br> Width",
+                             "Species"),
+  escape = FALSE)
+```
+
+# References
