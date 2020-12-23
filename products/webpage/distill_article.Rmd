@@ -10,6 +10,7 @@ bibliography: ../project.bib
 output:
   distill::distill_article:
     toc: true
+    theme: aog_theme.css
 ---
 
 ```{r setup, include=FALSE}
