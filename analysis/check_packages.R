@@ -5,7 +5,10 @@
 #http://www.vikram-baliga.com/blog/2015/7/19/a-hassle-free-way-to-verify-that-r-packages-are-installed-and-loaded
 
 #add new packages to the chain here
-packages = c("foreign","ggplot2","stargazer")
+packages = c("here","readr",
+             "ggplot2","ggalt",
+             "dplyr","tibble","stringr","tidyr","broom",
+             "knitr","texreg","kableExtra")
 
 package.check <- lapply(packages, FUN = function(x) {
   if (!require(x, character.only = TRUE)) {
