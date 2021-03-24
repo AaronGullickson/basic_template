@@ -33,6 +33,9 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, error = FALSE,
                       warning = FALSE, eval = TRUE)
 #load data
 #load libraries
+library(here)
+source(here("analysis","check_packages.R"))
+source(here("analysis","useful_functions.R"))
 ```
 
 # Introduction

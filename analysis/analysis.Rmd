@@ -10,8 +10,9 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source("check_packages.R")
-source("useful_functions.R")
+library(here)
+source(here("analysis","check_packages.R"))
+source(here("analysis","useful_functions.R"))
 ```
 
 # Introduction
