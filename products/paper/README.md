@@ -14,4 +14,6 @@ here("analysis", "output", "constructed_data.RData")
 
 This ensures that the analysis and paper are drawing from the same data source. 
 
+I use the bookdown `pdf_document2` format for output. This allows me to cross-reference table and figure numbers within the text using the format described [here](https://bookdown.org/yihui/rmarkdown-cookbook/cross-ref.html).
+
 Citation is done using the `project.bib` bibtex file. I usually create this file from Zotero. See [here](http://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html#bibliography_placement) for information about citation syntax in R Markdown.
