@@ -38,6 +38,21 @@ source(here("analysis","check_packages.R"))
 source(here("analysis","useful_functions.R"))
 ```
 
+```{r theme, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE, include=FALSE}
+# A custom ggplot theme that will be applied to all figures
+theme_mine <- function() {
+  theme_bw()+
+    theme(axis.title = element_text(size=10), 
+          axis.text = element_text(size=8),
+          legend.text=element_text(size=7),
+          legend.title=element_text(size=8),
+          legend.key.size = unit(0.8,"line"),
+          strip.text = element_text(size=9),
+          legend.position = "bottom")
+theme_set(theme_mine)
+}
+```
+
 # Introduction
 
 # Background
