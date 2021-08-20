@@ -14,6 +14,8 @@ output:
     citation_package: natbib
     fig_caption: yes
     template: ./resources/aog-latex-ms.tex
+    keep_tex: no
+    toc: false
   word_document:
     reference_docx: ./resources/aog_word_style.docx
 fontfamily: mathpazo
