@@ -1,5 +1,15 @@
-**/.Rhistory
-**/.RData
-**/.DS_Store
-**/*.bbl
-**/*.ent
+# files added by usethis::git_vaccinate
+.httr-oauth
+.Rproj.user
+.Rhistory
+.Rdata
+.DS_Store
+# Constructed files
+*.html
+*.pdf
+*.log
+# Ignore all the junk created by LaTeX
+*.aux
+*.out
+*.bbl
+*.ent
