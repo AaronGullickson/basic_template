@@ -13,3 +13,5 @@
 *.out
 *.bbl
 *.ent
+# Ignore quarto stuff
+/.quarto/
